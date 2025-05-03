@@ -1,38 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Garamond";
+}
+
+header {
+  background-color: #171717;
+  box-shadow: 0px 3px 10px #464646;
+}
+
 .navbar {
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 6rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: auto;
+}
+
+.logo h1 {
+  color: #fff;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+}
+
+.navList ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navItem {
+  margin: 0 15px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.loginButton button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.loginButton button a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.mobileMenuIcon {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media screen and (max-width: 730px) {
+  .navBar {
+    padding: 1.5rem 4rem;
   }
-  
-  .brand {
-    font-size: 1.2em;
+
+  .navItem {
+    display: none;
   }
-  
-  .brand span {
-    font-weight: 900;
-    text-transform: uppercase;
+
+  .loginButton {
+    display: none;
   }
-  
-  .links_list {
-    display: flex;
-    list-style: none;
+
+  .mobileMenuIcon {
+    display: block;
   }
-  
-  .links_list li {
-    margin-right: 1em;
-  }
-  
-  .links_list li a {
-    padding: 0.4em 0.6em;
-  }
-  
-  .active {
-    background-color: #000;
-    color: #fff;
-  }
-  .exit{
-    border: none;
+
+  .mobileMenuIcon button {
     background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
+
+  .mobileMenu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .mobileMenu .navItem {
+    display: block;
+    padding-top: 1.2rem;
+  }
+
+  .mobileMenu .loginButton {
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  .mobileMenu .loginButton button {
+    width: 100%;
+  }
+
+  .open {
+    display: block;
+  }
+}

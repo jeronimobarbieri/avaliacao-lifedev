@@ -1,7 +1,8 @@
 .register {
-    text-align: center;
-  }
-  
-  .register p {
-    color: #aaa;
-  }
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register p {
+  color: #aaa;
+}

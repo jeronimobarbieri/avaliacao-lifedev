@@ -1,48 +1,50 @@
-import styles from "./Register.module.css"
-
-import { useEffect, useState } from "react"
-import { useAuthentication } from "../../hooks/useAuthentication"
+import styles from "./Register.module.css";
+import { useEffect, useState } from "react";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Register = () => {
-  const [displayName, setDisplayName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
-  const [error, setError] = useState("")
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const { createUser, error: authError, loading } = useAuthentication()
+  const { createUser, error: authError, loading } = useAuthentication();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setError("")
+    setError("");
 
     const user = {
       displayName,
       email,
       password,
-    }
+    };
 
     if (password !== confirmPassword) {
-      setError("As senhas precisam ser iguais.")
-      return
+      setError("As senhas precisam ser iguais.");
+      return;
     }
 
-    const res = await createUser(user)
+    const res = await createUser(user);
+    if (res && res.user) {
+      console.log("Usuário criado:", res.user);
+    }
 
-    console.log(res)
-  }
+    console.log(res);
+  };
 
   useEffect(() => {
     if (authError) {
-      setError(authError)
+      setError(authError);
     }
-  }, [authError])
+  }, [authError]);
 
   return (
     <div className={styles.register}>
       <h1>Cadastre-se para postar</h1>
-      <p>Crie seu usuário e compartilhe suas histórias</p>
+      <p>Crie seu usuário e compartilhe seu conhecimento</p>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Nome:</span>
@@ -88,7 +90,7 @@ const Register = () => {
             value={confirmPassword}
           />
         </label>
-        {!loading && <button className="btn">Entrar</button>}
+        {!loading && <button className="btn">Cadastrar</button>}
         {loading && (
           <button className="btn" disabled>
             Aguarde...
@@ -97,7 +99,7 @@ const Register = () => {
         {error && <p className="error">{error}</p>}
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
