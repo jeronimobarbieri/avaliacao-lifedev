@@ -14,7 +14,6 @@ const PostDetail = ({ post }) => {
             {tag}
           </p>
         ))}
-        ;
       </div>
       <Link to={`/posts/${post.id}`} className="btn btn-outline">
         Ler

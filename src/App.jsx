@@ -49,8 +49,8 @@ function App() {
                 path="/posts/edit/:id"
                 element={user ? <EditPost /> : <Navigate to="/login" />}
               />
-              <Route path="posts/:id" element={<Post />} />
-              <Route path="search" element={<Search />} />
+              <Route path="/posts/:id" element={<Post />} />
+              <Route path="/search" element={<Search />} />
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}
