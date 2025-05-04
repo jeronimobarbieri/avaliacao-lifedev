@@ -83,10 +83,14 @@ firebase deploy
 🚧 Concluído com sucesso
 Todos os requisistos foram implementados e testados. O projeto está funcional e disponível para deploy
 
-👨‍💻 Autor
+👨‍💻 Dados do Aluno
 
 Jeronimo Barbieri Junior
 Github: jeronimobarbieri
+
+Curso: Desenvolvimento de Software Multiplataforma
+
+Professor: Victor Icoma
 
 📜 Licença
 
