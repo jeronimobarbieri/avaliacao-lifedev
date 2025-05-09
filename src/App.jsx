@@ -14,7 +14,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { AuthProvider } from "./contexts/AuthContext";
-import EditPost from "./pages/EditPost/EditPost";
+import EditPost from "./pages/Routes/PrivateRoute";
+import PrivateRoute from "./pages/Routes/PrivateRoute";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -43,11 +44,19 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route
                 path="/posts/create"
-                element={user ? <CreatePost /> : <Navigate to="/login" />}
+                element={
+                  <PrivateRoute>
+                    <CreatePost />
+                  </PrivateRoute>
+                }
               />
               <Route
                 path="/posts/edit/:id"
-                element={user ? <EditPost /> : <Navigate to="/login" />}
+                element={
+                  <PrivateRoute>
+                    <EditPost />
+                  </PrivateRoute>
+                }
               />
               <Route path="/posts/:id" element={<Post />} />
               <Route path="/search" element={<Search />} />
@@ -61,7 +70,11 @@ function App() {
               />
               <Route
                 path="/dashboard"
-                element={user ? <Dashboard /> : <Navigate to="/login" />}
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
               />
             </Routes>
           </div>
