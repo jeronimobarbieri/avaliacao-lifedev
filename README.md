@@ -92,6 +92,10 @@ Curso: Desenvolvimento de Software Multiplataforma
 
 Professor: Victor Icoma
 
+Testes concluídos:
+![Testes](https://github.com/user-attachments/assets/9dfab748-8d60-4d86-bd13-b8761dda9910)
+
+
 📜 Licença
 
 Este projeto é de uso educacional e livre para fins de aprendizado
